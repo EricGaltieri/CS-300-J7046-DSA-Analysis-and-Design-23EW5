@@ -1,0 +1,25 @@
+// function to print the list of all courses
+void printCourseList(vector<Course> courses){
+    int n = courses.size();
+
+    // sorting the courses according the course number
+    for (int i = 0; i < n - 1; i++){
+        for (int j = 0; j < n - i - 1; j++)
+        {
+            if (courses[j].courseNumber > courses[j + 1].courseNumber)
+            {
+                swap(courses[j + 1].courseNumber, courses[j].courseNumber);
+            }
+        }
+    }
+
+    // printing the list of all courses
+    cout << "\nAvaliable Courses: \n";
+    for (int i = 0; i < n; i++){
+        // printCourse(courses[i]);
+        cout << courses[i].courseNumber << ", " << courses[i].courseName << endl;
+    }
+}
+
+
+The nexted for loop shown here will iterate throuhg the list of courseNumbers, this case it would be a total of 8 total courses, then if the index above the current is a higher number then simply swap there index positions. 
